@@ -1,9 +1,43 @@
-﻿  Food.cpp
+﻿  Snake.cpp
 C:\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
-  (compiling source file 'Food.cpp')
+  (compiling source file 'Snake.cpp')
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\stdexcept(100,19):
       see declaration of 'std::runtime_error'
       C:\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
       see declaration of 'sf::Exception'
   
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244: 'return': conversion from 'T' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         with
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         [
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:             T=float
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         ]
+  (compiling source file 'Snake.cpp')
+  
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(20,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(24,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(24,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(32,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(31,14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(42,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(41,14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(51,14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(50,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(60,14): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Snake.cpp(59,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+C:\SFML-3.0.0\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+  (compiling source file 'main.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\stdexcept(100,19):
+      see declaration of 'std::runtime_error'
+      C:\SFML-3.0.0\include\SFML\System\Exception.hpp(41,23):
+      see declaration of 'sf::Exception'
+  
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244: 'return': conversion from 'T' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         with
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         [
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:             T=float
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+  Generating Code...
   MySnake.vcxproj -> C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\x64\Debug\MySnake.exe
