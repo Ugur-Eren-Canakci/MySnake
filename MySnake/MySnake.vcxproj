@@ -150,10 +150,6 @@
     <ClInclude Include="Snake.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\food.png" />
-    <Image Include="..\snake_head.png" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
