@@ -13,8 +13,8 @@
 using namespace std::literals;
 
 static std::mt19937 rng;
-static std::uniform_int_distribution horizontal_placement{ 0, int(constants::window_width / constants::move_distance)-1 };
-static std::uniform_int_distribution vertical_placement{ 0, int(constants::window_height / constants::move_distance)-1 };
+static std::uniform_int_distribution<int> horizontal_placement{ 0, int(constants::window_width / constants::move_distance)-1 };
+static std::uniform_int_distribution<int> vertical_placement{ 0, int(constants::window_height / constants::move_distance)-1 };
 
 
 int main() {

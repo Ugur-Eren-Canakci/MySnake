@@ -3,8 +3,8 @@
 #include "Snake.h"
 #include "constants.h"
 
-sf::Texture snakeHead::texture("../images/snake_green_head_32.png");
-sf::Texture snakeBody::texture("../images/snake_green_blob_32.png");
+sf::Texture snakeHead::texture("C:/Users/ugur_/Desktop/git repos/MySnake/MySnake/images/snake_green_head_32.png");
+sf::Texture snakeBody::texture("C:/Users/ugur_/Desktop/git repos/MySnake/MySnake/images/snake_green_blob_32.png");
 
 Snake::Snake() : head() {
 
