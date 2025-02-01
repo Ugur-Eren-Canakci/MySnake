@@ -1,7 +1,7 @@
 #include "Food.h"
 #include <iostream>
 
-sf::Texture Food::texture{"../images/apple_red_64.png"};
+sf::Texture Food::texture{"../images/apple_red_32.png"};
 
 Food::Food() : sprite(texture) {
 	std::cout << "Food created" << std::endl;
