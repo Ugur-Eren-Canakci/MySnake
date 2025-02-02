@@ -1,10 +1,10 @@
-﻿  main.cpp
+﻿  Game_Manager.cpp
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244: 'return': conversion from 'T' to 'int', possible loss of data
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         with
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         [
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:             T=float
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         ]
-  (compiling source file 'main.cpp')
+  (compiling source file 'Game_Manager.cpp')
   
-C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\main.cpp(141,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Game_Manager.cpp(144,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   MySnake.vcxproj -> C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\x64\Debug\MySnake.exe

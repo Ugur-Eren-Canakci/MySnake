@@ -11,6 +11,7 @@
 #include "game_over_screen.h"
 #include "game_play_screen.h"
 #include "game_start_screen.h"
+#include "Game_Manager.h"
 
 using namespace std::literals;
 
@@ -21,6 +22,10 @@ static std::chrono::steady_clock timer;
 
 int main() {
 
+	Game_Manager game_manager;
+
+	while (true) game_manager.update_screen();
+	/*
 	bool game_start = false;
 	bool game_over = false;
 	
@@ -164,6 +169,9 @@ int main() {
 			game_window.display();
 		}
 	}
+	*/
+
+
 
 	return 0;
 }

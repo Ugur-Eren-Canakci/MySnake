@@ -139,9 +139,9 @@
     <ClCompile Include="Entity_Manager.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Game_Manager.cpp" />
-    <ClCompile Include="game_over_screen.cpp" />
-    <ClCompile Include="game_play_screen.cpp" />
-    <ClCompile Include="game_start_screen.cpp" />
+    <ClCompile Include="game_over_overlay.cpp" />
+    <ClCompile Include="game_play_overlay.cpp" />
+    <ClCompile Include="game_start_overlay.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="Snake.cpp" />
@@ -153,9 +153,9 @@
     <ClInclude Include="Entity_Manager.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="Game_Manager.h" />
-    <ClInclude Include="game_over_screen.h" />
-    <ClInclude Include="game_play_screen.h" />
-    <ClInclude Include="game_start_screen.h" />
+    <ClInclude Include="game_over_overlay.h" />
+    <ClInclude Include="game_play_overlay.h" />
+    <ClInclude Include="game_start_overlay.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="Wall.h" />

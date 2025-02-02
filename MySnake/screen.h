@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class screen {
+class overlay {
 protected:
 	static sf::Font font;
 

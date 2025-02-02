@@ -36,13 +36,13 @@
     <ClCompile Include="Entity_Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game_over_screen.cpp">
+    <ClCompile Include="game_over_overlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game_start_screen.cpp">
+    <ClCompile Include="game_start_overlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game_play_screen.cpp">
+    <ClCompile Include="game_play_overlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="screen.cpp">
@@ -71,13 +71,13 @@
     <ClInclude Include="constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game_over_screen.h">
+    <ClInclude Include="game_over_overlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game_start_screen.h">
+    <ClInclude Include="game_start_overlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game_play_screen.h">
+    <ClInclude Include="game_play_overlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="screen.h">
