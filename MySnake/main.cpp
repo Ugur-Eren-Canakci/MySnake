@@ -17,59 +17,59 @@ using namespace std::literals;
 static std::mt19937 rng;
 static std::uniform_int_distribution<int> horizontal_placement{ 0, int(constants::window_width / constants::move_distance)-1 };
 static std::uniform_int_distribution<int> vertical_placement{ 0, int(constants::window_height / constants::move_distance)-1 };
-
+static std::chrono::steady_clock timer;
 
 int main() {
 
-	int game_score = 0;
 	bool game_start = false;
 	bool game_over = false;
 	
 	sf::RenderWindow game_window(sf::VideoMode({ constants::window_width,constants::window_height }), "My Snake");
 	game_window.setFramerateLimit(60);
-	
-	while(!game_start) {
-		
-		game_window.clear(sf::Color::Black);
-		game_start_screen start_screen{};
-
-		while (const std::optional event = game_window.pollEvent()) {
-
-			if (event->is<sf::Event::Closed>()) {
-				game_window.close();
-			}
-
-			else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-
-				if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
-					game_window.close();
-
-				else if (keyPressed->scancode == sf::Keyboard::Scancode::Q)
-					game_window.close();
-			}
-		}
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::P)) {
-			game_start = true;
-		}
-
-		start_screen.show_text(game_window);
-		game_window.display();
-
-	}
 
 	Food apple(horizontal_placement(rng), vertical_placement(rng));
 	Snake snake{};
-
-	std::chrono::steady_clock timer;
 	auto starting_time = timer.now();
-	
+	// initialize game play screen 
+	game_play_screen play_screen{};
+
 	
 	while (game_window.isOpen()) {
 		
+		while (!game_start) {
+
+			game_window.clear(sf::Color::Black);
+			game_start_screen start_screen{};
+
+			while (const std::optional event = game_window.pollEvent()) {
+
+				if (event->is<sf::Event::Closed>()) {
+					game_window.close();
+				}
+
+				else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+
+					if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
+						game_window.close();
+
+					else if (keyPressed->scancode == sf::Keyboard::Scancode::Q)
+						game_window.close();
+				}
+			}
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::P)) {
+				game_start = true;
+			}
+
+			start_screen.show_text(game_window);
+			game_window.display();
+
+		}
+
 		game_window.clear(sf::Color::Black);
 		auto frame_start = timer.now();
 
+		// game closing commands
 		while (const std::optional event = game_window.pollEvent()) {
 
 			if (event->is<sf::Event::Closed>()) {
@@ -86,6 +86,7 @@ int main() {
 			}
 		}
 
+		// gameplay loop
 		if (!game_over) {
 
 			// controls
@@ -105,11 +106,23 @@ int main() {
 				snake.move_right();
 			}
 
+			
+			// show current score
+			play_screen.show_text(game_window);
+
 			// ate food
 			if (snake.ate_the_food(apple)) {
+
+				// create new apple
 				apple = Food(horizontal_placement(rng), vertical_placement(rng));
-				game_score += 10;
+				// increase snake body length
 				snake.add_body_part();
+				// show new score
+				play_screen.increase_score();
+				// draw the score 
+				play_screen.show_text(game_window);
+				
+
 			}
 
 			// ate itself
@@ -121,7 +134,7 @@ int main() {
 			}
 
 
-			// place the apple
+			// draw the apple
 			game_window.draw(apple.get_sprite());
 
 			// place the snake
@@ -144,7 +157,11 @@ int main() {
 			}
 		}
 		else {
-			game_over_screen game_over{ game_window };
+			game_window.clear(sf::Color::Black);
+			game_over_screen game_over{};
+			game_over.show_text(game_window);
+
+			game_window.display();
 		}
 	}
 

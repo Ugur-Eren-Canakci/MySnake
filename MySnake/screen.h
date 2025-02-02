@@ -1,0 +1,12 @@
+#pragma once
+
+#include <SFML/Graphics.hpp>
+
+class screen {
+protected:
+	static sf::Font font;
+
+public:
+	virtual void show_text(sf::RenderWindow& window) = 0;
+};
+

@@ -2,26 +2,28 @@
 
 #include <SFML/Graphics.hpp>
 #include "constants.h"
+#include "screen.h"
 
-
-class game_over_screen {
+class game_over_screen : public screen{
 private:
 	sf::Font font{ "C:\\Windows\\Fonts\\arial.ttf" };
-	sf::Text text{ font };
+	sf::Text game_over_text{ font };
 	
 
 public: 
 
-	game_over_screen(sf::RenderWindow& game_window) {
-		text.setCharacterSize(24);
-		text.setFillColor(sf::Color::Red);
-		text.setStyle(sf::Text::Bold);
-		text.setString("Game over.");
-		text.setOrigin({ (-1*constants::window_width/2), 
-						 (-1*constants::window_height/2 ) });
+	game_over_screen() {
+		game_over_text.setCharacterSize(24);
+		game_over_text.setFillColor(sf::Color::Red);
+		game_over_text.setStyle(sf::Text::Bold);
+		game_over_text.setString("Game over.");
+		game_over_text.setOrigin({ (-1*constants::window_width/2),
+								   (-1*constants::window_height/2 ) });
 		
-		game_window.draw(text);
-		game_window.display();
+	}
+
+	void show_text(sf::RenderWindow& window) override {
+		window.draw(game_over_text);
 	}
 };
 

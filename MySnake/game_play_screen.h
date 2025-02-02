@@ -3,29 +3,31 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class game_play_screen {
+#include "screen.h"
+
+class game_play_screen : public screen{
 private:
-	sf::Font font{ "C:\\Windows\\Fonts\\arial.ttf" };
-	sf::Text score_text{ font };
+	sf::Text score_text;
 	int current_score;
 
 public:
 
-	game_play_screen(sf::RenderWindow game_window) {
+	game_play_screen() : score_text{ font }, current_score{ 0 } {
 		score_text.setCharacterSize(24);
 		score_text.setFillColor(sf::Color::Red);
 		score_text.setStyle(sf::Text::Bold);
 		score_text.setString("Current Score: 0");
 		score_text.setOrigin({ 0.0f, 0.0f });
 
-		game_window.draw(score_text);
-		game_window.display();
 	}
-
-	void set_score(int score) {
-		current_score = score;
+	
+	void show_text(sf::RenderWindow& window) override {
 		score_text.setString("Current Score: " + std::to_string(current_score));
+		window.draw(score_text);
 	}
 
+	void increase_score() {
+		current_score += 10;
+	}
 };
 
