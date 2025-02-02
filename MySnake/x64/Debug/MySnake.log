@@ -1,1 +1,10 @@
-﻿  MySnake.vcxproj -> C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\x64\Debug\MySnake.exe
+﻿  main.cpp
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244: 'return': conversion from 'T' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         with
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         [
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:             T=float
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\main.cpp(128,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MySnake.vcxproj -> C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\x64\Debug\MySnake.exe

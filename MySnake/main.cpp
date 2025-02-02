@@ -9,6 +9,8 @@
 #include "Food.h"
 #include "Snake.h"
 #include "game_over_screen.h"
+#include "game_play_screen.h"
+#include "game_start_screen.h"
 
 using namespace std::literals;
 
@@ -18,10 +20,43 @@ static std::uniform_int_distribution<int> vertical_placement{ 0, int(constants::
 
 
 int main() {
+
+	int game_score = 0;
+	bool game_start = false;
+	bool game_over = false;
+	
 	sf::RenderWindow game_window(sf::VideoMode({ constants::window_width,constants::window_height }), "My Snake");
 	game_window.setFramerateLimit(60);
-	int game_score = 0;
-	bool game_over = false;
+	
+	while(!game_start) {
+		
+		game_window.clear(sf::Color::Black);
+		game_start_screen start_screen{};
+
+		while (const std::optional event = game_window.pollEvent()) {
+
+			if (event->is<sf::Event::Closed>()) {
+				game_window.close();
+			}
+
+			else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+
+				if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
+					game_window.close();
+
+				else if (keyPressed->scancode == sf::Keyboard::Scancode::Q)
+					game_window.close();
+			}
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::P)) {
+			game_start = true;
+		}
+
+		start_screen.show_text(game_window);
+		game_window.display();
+
+	}
 
 	Food apple(horizontal_placement(rng), vertical_placement(rng));
 	Snake snake{};
