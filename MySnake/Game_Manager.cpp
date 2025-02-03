@@ -35,6 +35,11 @@ Game_Manager::Game_Manager() :
 	game_window.setFramerateLimit(60);
 }
 
+void Game_Manager::get_start_input() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::P)) {
+		game_state = GAME_STATE::RUN;
+	}
+}
 void Game_Manager::get_game_input() {
 	// controls
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::W)) {
@@ -53,11 +58,6 @@ void Game_Manager::get_game_input() {
 		snake.move_right();
 	}
 }
-
-void Game_Manager::update_screen() {
-	game_window.display();
-}
-
 void Game_Manager::get_closing_input() {
 
 	while (const std::optional event = game_window.pollEvent()) {
@@ -77,14 +77,22 @@ void Game_Manager::get_closing_input() {
 	}
 
 }
-
-void Game_Manager::start_screen_loop() {
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::P)) {
+void Game_Manager::get_game_over_inputs() {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::R)) {
+		game_score = 0;
+		apple = Food{ horizontal_placement(rng), vertical_placement(rng) };
+		snake = Snake{};
 		game_state = GAME_STATE::RUN;
 	}
+}
 
+void Game_Manager::update_screen() {
+	game_window.display();
+}
+
+void Game_Manager::start_screen_loop() {
 	start_overlay.show_text(game_window);
+	get_start_input();
 }
 
 void Game_Manager::game_screen_loop() {
@@ -136,6 +144,7 @@ void Game_Manager::game_screen_loop() {
 
 void Game_Manager::game_over_screen_loop() {
 	over_overlay.show_text(game_window);
+	get_game_over_inputs();
 }
 
 void Game_Manager::game_loop() {

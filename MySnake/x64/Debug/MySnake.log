@@ -6,7 +6,8 @@ C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning 
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         ]
   (compiling source file 'Game_Manager.cpp')
   
-C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Game_Manager.cpp(117,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Game_Manager.cpp(127,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  game_over_overlay.cpp
   main.cpp
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244: 'return': conversion from 'T' to 'int', possible loss of data
 C:\Users\ugur_\Desktop\git repos\MySnake\MySnake\MySnake\Food.h(24,10): warning C4244:         with

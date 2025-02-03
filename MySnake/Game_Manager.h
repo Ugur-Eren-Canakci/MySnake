@@ -39,14 +39,23 @@ private:
 	Food apple;
 
 public:
+	// default constructor
 	Game_Manager();
 
+	// updating the screen
 	void update_screen();
+
+	// inputs
+	void get_start_input();
+	void get_game_input();
+	void get_closing_input();
+	void get_game_over_inputs();
+
+	// loops in each game mode
 	void start_screen_loop();
 	void game_screen_loop();
 	void game_over_screen_loop();
-	void get_game_input();
-	void get_closing_input();
 
+	// main controler of the game loop
 	void game_loop();
 };
