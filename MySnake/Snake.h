@@ -2,6 +2,7 @@
 
 #include "Entity.h"
 #include "Food.h"
+#include "Wall.h"
 
 #include <cmath>
 #include <vector>
@@ -85,65 +86,32 @@ public:
 
 class Snake : public Entity {
 private:
-	
 	snakeHead head;
 	std::vector<snakeBody> body;
-	
 public:
 
+	// constructor
 	Snake();
-	
+
+	// body parts
 	sf::Sprite get_head_sprite() {
 		return head.get_sprite();
 	}
-
 	std::vector<snakeBody>& get_body_parts() {
 		return body;
 	}
-
 	void setPosition(int x, int y);
-
-	void add_body_part() {
-		snakeBody new_body{};
-		auto last_body = body[body.size() - 1];
-		if (head.get_direction() == Direction::UP) {
-			new_body.setPosition(last_body.get_sprite().getPosition().x,
-								 last_body.get_sprite().getPosition().y - constants::move_distance);
-		}
-		else if (head.get_direction() == Direction::DOWN) {
-			new_body.setPosition(last_body.get_sprite().getPosition().x,
-								 last_body.get_sprite().getPosition().y + constants::move_distance);
-		}
-		else if (head.get_direction() == Direction::LEFT) {
-			new_body.setPosition(last_body.get_sprite().getPosition().x + constants::move_distance,
-								 last_body.get_sprite().getPosition().y );
-		}
-		else {
-			new_body.setPosition(last_body.get_sprite().getPosition().x - constants::move_distance,
-				last_body.get_sprite().getPosition().y);
-		}
-
-		body.push_back(new_body);
-
-
-	}
-
+	void add_body_part();
+	
+	// movements
 	void move_up();
 	void move_down();
 	void move_left();
 	void move_right();
 
-	bool ate_the_food(const Food& food) const {
-		bool horizontal = std::abs(head.get_x() - food.get_x()) < constants::snake_head_size;
-		bool vertical = std::abs(head.get_y() - food.get_y()) < constants::snake_head_size;
-		return horizontal && vertical;
-	}
-
-	bool ate_itself(const snakeBody& body) const {
-		bool horizontal = std::abs(head.get_x() - body.get_x()) < constants::move_distance;
-		bool vertical = std::abs(head.get_y() - body.get_y()) <  constants::move_distance;
-		return horizontal && vertical;
-
-	}
+	// interactions with elements
+	bool ate_the_food(const Food& food) const;
+	bool crashed_itself(const snakeBody& body) const;
+	bool crashed_a_wall(const Wall& wall) const;
 };
 

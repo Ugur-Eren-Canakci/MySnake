@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
+
 #include "Entity.h"
 #include "constants.h"
 
@@ -9,7 +11,8 @@ private:
 	sf::Sprite sprite;
 public: 
 	Food();
-	Food(int x, int y);
+	Food(float x, float y);
+	Food(sf::Vector2f location);
 	~Food();
 
 	sf::Sprite get_sprite() const noexcept {
@@ -24,5 +27,8 @@ public:
 		return (sprite.getPosition().y);
 	}
 
+	void setPosition(sf::Vector2f location) {
+		sprite.setPosition(location);
+	}
 };
 

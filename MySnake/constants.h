@@ -8,6 +8,7 @@ namespace constants {
 	static constexpr float snake_head_size{ 32 };
 	static constexpr float snake_body_size{ 32 };
 	static constexpr float start_body_length{ 3 };
+	static constexpr float food_length{ 32 };
 	static constexpr float wall_side_length{ 32 };
 
 }
