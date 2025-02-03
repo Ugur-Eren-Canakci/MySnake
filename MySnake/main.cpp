@@ -24,8 +24,8 @@ int main() {
 
 	Game_Manager game_manager;
 
-	//start the engine
-	game_manager.engine();
+	//start the game loop
+	game_manager.game_loop();
 
 	return 0;
 }

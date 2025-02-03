@@ -21,9 +21,9 @@ private:
 	static std::chrono::steady_clock timer;
 	
 	// game screens
-	static game_start_overlay start_screen;
-	static game_play_overlay play_screen;
-	static game_over_overlay over_screen;
+	static game_start_overlay start_overlay;
+	static game_play_overlay play_overlay;
+	static game_over_overlay over_overlay;
 	
 	// game window
 	sf::RenderWindow game_window;
@@ -48,5 +48,5 @@ public:
 	void get_game_input();
 	void get_closing_input();
 
-	void engine();
+	void game_loop();
 };
