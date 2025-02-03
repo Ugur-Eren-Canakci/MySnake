@@ -17,10 +17,10 @@ public:
 		game_over_text.setFillColor(sf::Color::Red);
 		game_over_text.setStyle(sf::Text::Bold);
 		
-		game_over_text.setString("Game over.\nIf you want to restart the game, \nPlease press R.");
+		game_over_text.setString("Game over.\nIf you want to restart the game, \nplease press R.");
 		
-		game_over_text.setOrigin({ (-1*constants::window_width /2 + 100),
-								   (-1*constants::window_height/2 + 100) });
+		game_over_text.setOrigin({ (-1*constants::window_width /2 + 200),
+								   (-1*constants::window_height/2 ) });
 		
 	}
 

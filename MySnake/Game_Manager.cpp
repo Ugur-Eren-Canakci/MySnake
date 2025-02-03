@@ -65,7 +65,6 @@ Game_Manager::Game_Manager() :
 		"My Snake"
 	),
 	game_state{ GAME_STATE::START },
-	game_score{ 0 },
 	snake{},
 	outer_walls{ generate_outer_walls() }
 {
@@ -133,7 +132,7 @@ void Game_Manager::get_closing_input() {
 }
 void Game_Manager::get_game_over_inputs() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::R)) {
-		game_score = 0;
+		play_overlay.reset_score();
 		snake = Snake{};
 		apple = Food{get_new_position()};
 		game_state = GAME_STATE::RUN;
@@ -177,12 +176,13 @@ void Game_Manager::start_screen_loop() {
 }
 
 void Game_Manager::game_screen_loop() {
-
+	// input 
 	get_game_input();
 
+	// frame starting time
+	auto frame_start = timer.now();
 	// ate food
 	if (snake.ate_the_food(apple)) {
-
 		// increase snake body length
 		snake.add_body_part();
 		// create new apple
@@ -209,9 +209,6 @@ void Game_Manager::game_screen_loop() {
 		}
 	}
 
-	// draw the apple
-	game_window.draw(apple.get_sprite());
-
 	// draw the snake
 	for (int i = body_parts.size() - 1; i > -1; i--) {
 		game_window.draw(body_parts[i].get_sprite());
@@ -223,16 +220,19 @@ void Game_Manager::game_screen_loop() {
 		game_window.draw(wall.get_sprite());
 	}
 
+	// draw the apple
+	game_window.draw(apple.get_sprite());
+
 	// show game score
 	play_overlay.show_text(game_window);
 	
-	/*
-	to be added back later
-		auto frame_end = timer.now();
+	
+	auto frame_end = timer.now();
 	while (frame_end - frame_start < 30ms) {
 		frame_end = timer.now();
+		// frame is stunted until 30ms passes
 	}
-	*/
+	
 
 }
 
@@ -254,9 +254,11 @@ void Game_Manager::game_loop() {
 			start_screen_loop();
 
 		// gameplay loop
-		else if (game_state == GAME_STATE::RUN)
+		else if (game_state == GAME_STATE::RUN) {
+			reset_timer();
 			game_screen_loop();
-
+		}
+			
 		// end of game loop
 		else if (game_state == GAME_STATE::GAME_OVER)
 			game_over_screen_loop();
