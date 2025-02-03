@@ -13,75 +13,93 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Game Elements">
+      <UniqueIdentifier>{f5c09159-783d-4d57-8a2f-d5b38f2fc8d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{714ebc45-d4e4-4e8f-a109-73118bfb275f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Elements">
+      <UniqueIdentifier>{e752e246-784e-4ac7-8439-3b4e1f6899be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers">
+      <UniqueIdentifier>{c4bcec3f-f697-44aa-a789-c87049c76717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Overlays">
+      <UniqueIdentifier>{815b48f8-de91-4ca6-a81d-5204096d15f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Overlays">
+      <UniqueIdentifier>{a69e8dc1-920b-4ba2-aa1b-e30d193d79a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Snake.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game Elements</Filter>
     </ClCompile>
     <ClCompile Include="Food.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Source Files\Game Elements</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game Elements</Filter>
     </ClCompile>
     <ClCompile Include="Game_Manager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="Entity_Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="game_over_overlay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="game_start_overlay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="game_play_overlay.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
     <ClCompile Include="screen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="game_start_overlay.cpp">
+      <Filter>Source Files\Overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="game_play_overlay.cpp">
+      <Filter>Source Files\Overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="game_over_overlay.cpp">
+      <Filter>Source Files\Overlays</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Snake.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Food.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game_Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity_Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game_over_overlay.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game_start_overlay.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Overlays</Filter>
     </ClInclude>
     <ClInclude Include="game_play_overlay.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="game_start_overlay.h">
+      <Filter>Header Files\Overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="Food.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Header Files\Game Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files\Game Elements</Filter>
     </ClInclude>
     <ClInclude Include="screen.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity_Manager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Manager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Game Elements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

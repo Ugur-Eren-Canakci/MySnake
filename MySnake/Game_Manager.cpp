@@ -9,6 +9,37 @@
 #include "constants.h"
 #include "Food.h"
 #include "Snake.h"
+#include "Wall.h"
+
+std::vector<Wall> generate_outer_walls() {
+	
+	std::vector<Wall> outer_walls;
+	// number of horizontal walls
+	int horizontal_wall_count = constants::window_width / constants::wall_side_length;
+	int vertical_wall_count = constants::window_height / constants::wall_side_length;
+
+	// top layer
+	for (int i = 0; i < horizontal_wall_count; i++) {
+		outer_walls.push_back(Wall{ i * constants::wall_side_length, 0 });
+	}
+
+	// bottom layer
+	for (int i = 0; i < horizontal_wall_count; i++) {
+		outer_walls.push_back(Wall{ i * constants::wall_side_length, constants::window_height - constants::wall_side_length });
+	}
+
+	// left layer
+	for (int i = 1; i < vertical_wall_count-1; i++) {
+		outer_walls.push_back(Wall{ 0, i*constants::wall_side_length });
+	}
+
+	// right layer
+	for (int i = 1; i < vertical_wall_count-1; i++) {
+		outer_walls.push_back(Wall{ constants::window_width - constants::wall_side_length, i *constants::wall_side_length });
+	}
+
+	return outer_walls;
+}
 
 using namespace std::literals;
 
@@ -24,13 +55,14 @@ std::chrono::steady_clock Game_Manager::timer;
 Game_Manager::Game_Manager() :
 	// game window initialized here for now, maybe I'll change it
 	game_window(
-		sf::VideoMode({ constants::window_width,constants::window_height }), 
+		sf::VideoMode({ constants::window_width,constants::window_height }),
 		"My Snake"
-	), 
-	game_state{ GAME_STATE::START }, 
+	),
+	game_state{ GAME_STATE::START },
 	game_score{ 0 },
 	apple{ horizontal_placement(rng), vertical_placement(rng) },
-	snake{}
+	snake{},
+	outer_walls{ generate_outer_walls()}
 {
 	game_window.setFramerateLimit(60);
 }
@@ -120,6 +152,9 @@ void Game_Manager::game_screen_loop() {
 		}
 	}
 
+	// crashed a wall
+	for (const auto& el : outer_walls)
+
 	// draw the apple
 	game_window.draw(apple.get_sprite());
 
@@ -128,6 +163,11 @@ void Game_Manager::game_screen_loop() {
 		game_window.draw(body_parts[i].get_sprite());
 	}
 	game_window.draw(snake.get_head_sprite());
+
+	// draw the outer walls
+	for (const Wall& wall : outer_walls) {
+		game_window.draw(wall.get_sprite());
+	}
 
 	// show game score
 	play_overlay.show_text(game_window);

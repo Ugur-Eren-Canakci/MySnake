@@ -1,10 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+
 #include "game_start_overlay.h"
 #include "game_play_overlay.h"
 #include "game_over_overlay.h"
 #include "Snake.h"
+#include "Wall.h"
+
 
 enum class GAME_STATE {START, RUN, GAME_OVER};
 
@@ -37,6 +41,9 @@ private:
 
 	// food
 	Food apple;
+
+	// outer walls
+	std::vector<Wall> outer_walls;
 
 public:
 	// default constructor
