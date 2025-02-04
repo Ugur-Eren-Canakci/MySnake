@@ -16,7 +16,7 @@ Snake::Snake() : head() {
 					 (constants::window_height - constants::snake_head_size) / 2);
 	for (int i = 0; i < constants::start_body_length; i++) {
 		temp.push_back(snakeBody{head.get_x(),
-								 head.get_y() + (i + 1) * constants::snake_body_size }
+								 head.get_y() + (i + 1) * constants::move_distance }
 					  );
 	}
 	body = temp;

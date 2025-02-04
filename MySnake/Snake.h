@@ -18,7 +18,7 @@ private:
 	Direction direction;
 public:
 
-	snakeHead() : sprite(texture), direction(Direction::RIGHT) {}
+	snakeHead() : sprite(texture), direction(Direction::UP) {}
 
 	sf::Sprite get_sprite() const {
 		return this->sprite;

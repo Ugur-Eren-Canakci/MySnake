@@ -1,15 +1,11 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <random>
-#include <memory>
-#include <vector>
 #include <chrono>
 
 #include "Game_Manager.h"
 #include "constants.h"
 #include "Food.h"
-#include "Snake.h"
-#include "Wall.h"
+
 
 std::vector<Wall> generate_outer_walls() {
 	
@@ -50,10 +46,10 @@ game_over_overlay Game_Manager::over_overlay;
 
 // rng
 std::mt19937 Game_Manager::rng;
-std::uniform_int_distribution<int> Game_Manager::horizontal_placement{ int(constants::wall_side_length) + 1, 
-																	   int(constants::window_width - constants::wall_side_length - constants::food_length)};
-std::uniform_int_distribution<int> Game_Manager::vertical_placement{ int(constants::wall_side_length) + 1, 
-																	 int(constants::window_width - constants::wall_side_length - constants::food_length) };
+std::uniform_int_distribution<int> Game_Manager::horizontal_placement{ int(constants::wall_side_length + constants::food_padding),
+																	   int(constants::window_width -constants::food_padding)};
+std::uniform_int_distribution<int> Game_Manager::vertical_placement{ int(constants::wall_side_length + constants::food_padding) ,
+																	 int(constants::window_width - constants::food_padding) };
 
 // timer 
 std::chrono::steady_clock Game_Manager::timer;
@@ -67,6 +63,8 @@ Game_Manager::Game_Manager() :
 	game_state{ GAME_STATE::START },
 	snake{},
 	outer_walls{ generate_outer_walls() }
+
+
 {
 	// set framerate limit
 	game_window.setFramerateLimit(60);
@@ -156,7 +154,7 @@ sf::Vector2f Game_Manager::get_new_position() {
 		float upper_bound = it->first.y;
 		float lower_bound = it->first.y + it->second.y;
 
-		if ( (new_position.x >= left_bound && new_position.x <= right_bound) || (new_position.y >= upper_bound && new_position.y <= lower_bound) ) {
+		if ( (new_position.x >= left_bound && new_position.x <= right_bound) && (new_position.y >= upper_bound && new_position.y <= lower_bound) ) {
 			new_position = sf::Vector2f{ float(horizontal_placement(rng)),float(vertical_placement(rng)) };
 			it = locations.begin();
 		}

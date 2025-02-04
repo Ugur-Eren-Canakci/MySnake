@@ -15,13 +15,13 @@ public:
 
 	game_play_overlay() : score_text{ font }, timer_text{ font }, current_score { 0 } {
 		score_text.setCharacterSize(24);
-		score_text.setFillColor(sf::Color::Red);
+		score_text.setFillColor(sf::Color::Magenta);
 		score_text.setStyle(sf::Text::Bold);
 		score_text.setString("Current Score: 0");
 		score_text.setOrigin({ 0.0f, 0.0f });
 
 		timer_text.setCharacterSize(24);
-		timer_text.setFillColor(sf::Color::Red);
+		timer_text.setFillColor(sf::Color::Magenta);
 		timer_text.setStyle(sf::Text::Bold);
 		timer_text.setString("Play Duration: 0");
 		timer_text.setOrigin({ 0.0f, 24.0f });

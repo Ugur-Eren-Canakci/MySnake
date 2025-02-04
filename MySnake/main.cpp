@@ -5,12 +5,6 @@
 #include <vector>
 #include <chrono>
 
-#include "constants.h"
-#include "Food.h"
-#include "Snake.h"
-#include "game_over_overlay.h"
-#include "game_play_overlay.h"
-#include "game_start_overlay.h"
 #include "Game_Manager.h"
 
 using namespace std::literals;
