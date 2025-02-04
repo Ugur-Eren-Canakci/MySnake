@@ -8,3 +8,4 @@ The reason I'm making this game is to:
 
 As of Feb. 1st 2025, only the very main features are ready; namely moving the snake around, eating food, and ending the game when the head hits the body.
 
+03.01.25 : Added outer walls, snake-head and wall interaction, and finally introduced an algorithm to place the food appropriately at each iteration. 
