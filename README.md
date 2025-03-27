@@ -2,6 +2,14 @@
 
 This is my own iteration of the classic Snake game
 
+How to play:
+Get the .exe file from the directory "x64/Release/MySnake.exe"
+Run the executable to start the game
+Use WASD to control the snake.
+The game pauses automatically when you don't press any buttons.
+If you'd like to quit the game, press Q.
+
+
 The reason I'm making this game is to:
   1) Push myself to get better at C++ in general, by working on a project with obtainable results
   2) Have a game where I can set up a Reinforcement Learning agent on top of, to improve my AI skills
