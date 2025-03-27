@@ -3,11 +3,11 @@
 This is my own iteration of the classic Snake game
 
 How to play:
-Get the .exe file from the directory "x64/Release/MySnake.exe"
-Run the executable to start the game
-Use WASD to control the snake.
-The game pauses automatically when you don't press any buttons.
-If you'd like to quit the game, press Q.
+  1) Get the .exe file from the directory "x64/Release/MySnake.exe"
+  2) Run the executable to start the game
+  3) Use WASD to control the snake.
+  4) The game pauses automatically when you don't press any buttons.
+  5) If you'd like to quit the game, press Q.
 
 
 The reason I'm making this game is to:
